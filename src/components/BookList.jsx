@@ -8,7 +8,8 @@ class BookList extends React.Component {
     state = {
         searchQuery: '',
         selectedBook: null
-    }
+    } 
+
 
     render() {
         return (
