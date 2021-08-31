@@ -10,7 +10,7 @@ const AddComment = ({asin}) => {
     })
 
     useEffect(() => {
-        setComment(comment =>({
+        setComment(comment => ({
             ...comment,
             elementId: asin
         }))
