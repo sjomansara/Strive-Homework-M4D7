@@ -22,7 +22,7 @@ const AddComment = ({asin}) => {
         try {
             let response = await fetch('https://striveschool-api.herokuapp.com/api/comments', {
                 method: 'POST',
-                body: JSON.stringify(this.state.comment),
+                body: JSON.stringify(comment),
                 headers: {
                     'Content-type': 'application/json',
                     Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTFkMGNkODJkNTI2MjAwMTViNmRkMTEiLCJpYXQiOjE2MzA0MTY2NTIsImV4cCI6MTYzMTYyNjI1Mn0.fisEkgJq6UEakcqWnRJsQMKZz7LaVF2pOlfCz9VAA5M'
@@ -50,21 +50,17 @@ const AddComment = ({asin}) => {
                             placeholder="Add comment here"
                             value={comment.comment}
                             onChange={e => setComment({
-                                comment: {
-                                    ...this.state.comment,
+                                    ...comment,
                                     comment: e.target.value
-                                }
                             })}
                         />
                     </Form.Group>
                     <Form.Group>
                         <Form.Label>Rating</Form.Label>
                         <Form.Control as="select" value={comment.rate}
-                            onChange={e => this.setState({
-                                comment: {
-                                    ...this.state.comment,
+                            onChange={e => setComment({
+                                    ...comment,
                                     rate: e.target.value
-                                }
                             })}>
                             <option>1</option>
                             <option>2</option>
